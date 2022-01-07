@@ -5,7 +5,9 @@ F1 帮助文档
 
 
 
-                Widget类(工程名:window)
+                
+				
+				Widget类(工程名:window)
 
 在widget.cpp里编写程序
 
