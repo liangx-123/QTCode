@@ -39,3 +39,42 @@ qDebug方法输出会带冒号  可以 名字.toUtf8().data()
  lambda   [=](){写方法}
 
 
+
+
+
+
+			QMainWindos类
+			
+
+			
+菜单栏  QMenuBar    menu()方法  创建菜单项要先用指针    只能有一个
+
+设置中心部件(只能一个)    setCentralWidget(edit);
+
+状态栏  QStatusBar  statusBar()  只能有一个
+
+工具栏   QToolBar   new对象    可以有几个
+
+浮动窗口  QDockWidget   new
+
+文字编辑  QEditText new
+
+标签多个 new 
+
+能有多个就new,只能一个就用方法
+
+ 
+
+一般都是 QLabel 指针 = new QLabel("文字",this);
+
+一个大类就要加一个头文件
+
+
+
+
+
+
+
+
+
+

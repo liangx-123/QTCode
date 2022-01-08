@@ -1,0 +1,5 @@
+<RCC>
+    <qresource prefix="/new/prefix1">
+        <file>src=http___b-ssl.duitang.com_uploads_item_201707_31_20170731201409_4NT5y.jpeg&amp;refer=http___b-ssl.duitang.jpg</file>
+    </qresource>
+</RCC>
