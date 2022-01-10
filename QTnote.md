@@ -72,7 +72,84 @@ qDebug方法输出会带冒号  可以 名字.toUtf8().data()
 
 
 
+   
+   
+   
+               资源类(Source)
+			   
+			   
+添加资源包   复制文件夹到工程目录下,右键添加文件-->QT-->QT Resource  添加
+然后 添加前缀 然后添加文件全选  
+ui->actionnew->setIcon(QIcon(":/new/prefix1/文件名")    :+前缀+文件名带尾缀   (可以直接复制Path)
+			   
+			   
+			   
+			对话框(QDialog)
 
+
+
+模态:用方法 dlg.exec()
+
+非模态: new  用指针接   newdlg->show()   要用newdlg->setAttribute(Qt::WA_DeleteOnClose);回收对象避免内存溢出
+
+消息的对话框  QMessageBox
+
+其他对话框: 颜色 文件 字体
+
+布局:  ui界面选择widget放进去然后点上面那行水平布局    按钮就放horizontal spacer(弹簧)  栅格布局  垂直策略:fixed
+			echomode:password
+			
+			
+			
+			
+			
+			布局
+
+TOOlButtom 放图标
+radio button 单选图标  默认选中: ui->对象->setChecked(true);
+check box  多选   2 选中  1半选  0未选中 
+QListWidget  new  整齐排列文本框
+QString    整齐排列文本框   用法: QStringList list;
+								list<<""<<""<<"";
+								ui->listWidget->addItem(list);
+        
+
+
+
+
+				QTreeWidge类(tree)
+
+先添加ui:Tree Widget
+
+QTreeWidgeItem    项目  new     子项目 addChild(对象)
+ 
+ 
+				QTableWidget(table)表
+
+
+ui选  tablewidget
+
+这些部件一般用QStringList()创建文字
+
+setItem(第几行,第几列,new QTableWidgetItem("文本"));
+
+
+		其他部件
+		
+scroll area 滚动
+Stacked widget  切换
+
+
+
+                    自定义信号控件(SmallWidget)
+
+
+
+
+
+先创建一个QT设计师界面widget  ,之后在里面布局,然后在大ui界面放一个widget部件提升为刚创建的类名.qspinbox要用指针  
+
+set get声明写在小类的public,  然后在小类.c里写方法,  在widget里connect调用  ui->widget->set   (为什么是widget我也不知道)
 
 
 
