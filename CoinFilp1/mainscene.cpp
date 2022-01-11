@@ -6,6 +6,7 @@
 #include<QDebug>
 #include<QPushButton>
 #include<QTimer>
+#include<QSound>
 
 MainScene::MainScene(QWidget *parent) :
     QMainWindow(parent),
@@ -23,7 +24,7 @@ MainScene::MainScene(QWidget *parent) :
 
 
 
-
+QSound *startSound = new QSound(":/TapButtonSound.wav",this);
 
       MyPushBotton *startBtn = new MyPushBotton(":/MenuSceneStartButton.png");
       startBtn->setParent(this);
@@ -32,6 +33,7 @@ MainScene::MainScene(QWidget *parent) :
      chooseScene =  new ChooseLevelScene;
 
      connect(chooseScene,&ChooseLevelScene::chooseSceneBack,[=](){
+         this->setGeometry(chooseScene->geometry());
          chooseScene->hide();
          this->show();});
 
@@ -39,10 +41,12 @@ MainScene::MainScene(QWidget *parent) :
       connect(startBtn,&MyPushBotton::clicked,[=](){
 
          qDebug() <<"点击了";
+         startSound->play();
          startBtn->zoom1();
          startBtn->zoom2();
 
          QTimer::singleShot(500,this,[=](){
+             chooseScene->setGeometry(this->geometry());
              this->hide();
              chooseScene->show();
 
