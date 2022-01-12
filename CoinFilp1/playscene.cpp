@@ -152,28 +152,34 @@ winLabel->move((this->width()-tmpPix.width())*0.5,-tmpPix.height());
                     }
                     //判断胜利
                     this->isWin = true;
-                    for(int i=0;i<4;++i){
-                        for(int j=0;j<4;++j){
+                    for(int i=0;i<4;i++){
+                        for(int j=0;j<4;j++){
 
-                            if(coinBtn[i][j] ==false){
+                            if(coinBtn[i][j]->flag ==false){
                                 this->isWin=false;
                                 break;
                             }
                         }
+
                     }
                     if(this->isWin==true)  {
                         qDebug()<<"胜利";
                         winSound->play();
+                        for(int i = 0;i<4;++i){
+                            for(int j = 0;j<4;j++){
+                                coinBtn[i][j]->isWin=true;
+                            }
+                        }
                         //胜利图片
-QPropertyAnimation *animation = new QPropertyAnimation(winLabel,"geometry");
-animation->setDuration(1000);
+                        QPropertyAnimation *animation = new QPropertyAnimation(winLabel,"geometry");
+                        animation->setDuration(1000);
 
-animation->setStartValue(QRect(winLabel->x(),winLabel->y(),winLabel->width(),winLabel->height()));
+                        animation->setStartValue(QRect(winLabel->x(),winLabel->y(),winLabel->width(),winLabel->height()));
 
-animation->setEndValue(QRect(winLabel->x(),winLabel->y()+114,winLabel->width(),winLabel->height()));
-              animation->setEasingCurve(QEasingCurve::OutBounce);
+                        animation->setEndValue(QRect(winLabel->x(),winLabel->y()+114,winLabel->width(),winLabel->height()));
+                                      animation->setEasingCurve(QEasingCurve::OutBounce);
 
-                    animation->start();
+                                            animation->start();
                     }
 
 

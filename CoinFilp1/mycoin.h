@@ -19,7 +19,7 @@ public:
     int min = 1,max = 8;
     bool isAnimation = false;
     void mousePressEvent(QMouseEvent *e);
-
+bool isWin = false;
 
 signals:
 

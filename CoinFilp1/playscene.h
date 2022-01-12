@@ -16,7 +16,7 @@ void paintEvent(QPaintEvent *);
 
 int gameArray[4][4];
 
-MyCoin *coinBtn[4][4];  bool isWin ;
+MyCoin *coinBtn[4][4];  bool isWin=true ;
 
 signals:
 void chooseSceneBack();
